@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UniTracker - Wrestling Talent Tracker</title>
+    <link rel="stylesheet" href="./css/site.css">
+</head>
+<body>
+    <div id="sidenav">
+        <h2>UniTracker</h2>
+        <div class="nav-item active" onclick="showPage('wrestlers')">Wrestlers</div>
+        <div class="nav-item" onclick="showPage('shows')">Shows</div>
+        <div class="nav-item" onclick="showPage('data-manager')">Data Manager</div>
+        <div class="nav-item" onclick="showPage('simulator')">Simulator</div>
+    </div>
+    
+    <div id="main-content">
+    
+    </div>
+        
+
+    <!-- Message Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Message</h2>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Championship Modal -->
+    <div id="championshipModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Championship</h2>
+                <span id="closeChampionshipModal" class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="championshipsList" class="championships-list"></div>
+                <form id="championshipForm">
+                    <div class="form-group">
+                        <label for="championshipName">Championship Name:</label>
+                        <input type="text" id="championshipName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="showSelect">Show:</label>
+                        <select id="showSelect" required>
+                            <option value="">Select Show</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="isTagTeam">Tag Team Title:</label>
+                        <select id="isTagTeam" required>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Add Championship</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./renderer.js"></script>
+</body>
+</html>
