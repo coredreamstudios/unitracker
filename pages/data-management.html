@@ -1,0 +1,110 @@
+<div id="data-manager-page" class="page">
+    <h1>Data Manager</h1>
+    <div class="card-grid">
+        <div class="card" onclick="showDataEditor('wrestler-types')">
+            <div class="card-icon">🤼</div>
+            <h2>Wrestler Types</h2>
+            <p>Manage wrestling styles like Powerhouse, High-Flyer, Technical, etc.</p>
+        </div>
+        
+        <div class="card" onclick="showDataEditor('weight-classes')">
+            <div class="card-icon">⚖️</div>
+            <h2>Weight Classes</h2>
+            <p>Manage weight divisions from Cruiserweight to Super Heavyweight.</p>
+        </div>
+        
+        <div class="card" onclick="showDataEditor('championships')">
+            <div class="card-icon">🏆</div>
+            <h2>Championships</h2>
+            <p>Manage titles and their current holders.</p>
+            <button id="addChampionshipBtn" class="btn btn-primary">Add Championship</button>
+        </div>
+    </div>
+    
+    <!-- Wrestler Types Editor Dialog -->
+    <dialog id="wrestler-types-editor">
+        <h2>Edit Wrestler Types</h2>
+        <form id="wrestlerTypeForm">
+            <div class="form-group">
+                <label for="typeName">Type Name:</label>
+                <input type="text" id="typeName" required>
+            </div>
+            <button type="submit">Add Type</button>
+        </form>
+        <table id="wrestlerTypesTable">
+            <thead>
+                <tr>
+                    <th>Type Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="closeDataEditor('wrestler-types-editor')" style="margin-top: 20px;">Close</button>
+    </dialog>
+    
+    <!-- Weight Classes Editor Dialog -->
+    <dialog id="weight-classes-editor">
+        <h2>Edit Weight Classes</h2>
+        <form id="weightClassForm">
+            <div class="form-group">
+                <label for="className">Class Name:</label>
+                <input type="text" id="className" required>
+            </div>
+            <button type="submit">Add Class</button>
+        </form>
+        <table id="weightClassesTable">
+            <thead>
+                <tr>
+                    <th>Class Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="closeDataEditor('weight-classes-editor')" style="margin-top: 20px;">Close</button>
+    </dialog>
+    
+    <!-- Championships Editor Dialog -->
+    <dialog id="championships-editor">
+        <h2>Edit Championships</h2>
+        <form id="championshipForm">
+            <div class="form-group">
+                <label for="titleName">Title Name:</label>
+                <input type="text" id="titleName" required>
+            </div>
+            <div class="form-group">
+                <label for="titleShow">Show:</label>
+                <select id="titleShow" required>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="isTagTeam">Tag Team Title:</label>
+                <select id="isTagTeam">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="currentHolder">Current Holder:</label>
+                <select id="currentHolder">
+                    <option value="">None</option>
+                </select>
+            </div>
+            <button type="submit">Add Championship</button>
+        </form>
+        <table id="championshipsTable">
+            <thead>
+                <tr>
+                    <th>Title Name</th>
+                    <th>Show</th>
+                    <th>Type</th>
+                    <th>Current Holder</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="closeDataEditor('championships-editor')" style="margin-top: 20px;">Close</button>
+    </dialog>
+</div>

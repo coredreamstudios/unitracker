@@ -1,0 +1,80 @@
+<div id="wrestlers-page" class="page active">
+    <h1>Wrestlers</h1>
+    <form id="wrestlerForm">
+        <div class="form-group">
+            <label for="wrestlerName">Wrestler Name:</label>
+            <input type="text" id="wrestlerName" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="brandSelect">Brand:</label>
+            <select id="brandSelect" required>
+                <option value="">Select Brand</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="wrestlerTypeSelect">Type:</label>
+            <select id="wrestlerTypeSelect" required>
+                <option value="">Select Type</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="weightClassSelect">Weight Class:</label>
+            <select id="weightClassSelect" required>
+                <option value="">Select Weight Class</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="alignmentSelect">Alignment:</label>
+            <select id="alignmentSelect">
+                <option value="Face">Face</option>
+                <option value="Heel">Heel</option>
+                <option value="Tweener">Tweener</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="championSelect">Champion Status:</label>
+            <select id="championSelect">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="factionSelect">Faction/Tag Team:</label>
+            <select id="factionSelect">
+                <option value="">No Faction</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="inFactionSelect">In Faction/Tag Team:</label>
+            <select id="inFactionSelect">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+        </div>
+        
+        <button type="button" onclick="addWrestler()" class="btn btn-primary">Add Wrestler</button>
+    </form>
+
+    <table id="wrestlerTable" class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Faction</th>
+                <th>Type</th>
+                <th>Weight Class</th>
+                <th>Alignment</th>
+                <th>Champion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>

@@ -1,0 +1,74 @@
+<div id="simulator-page" class="page">
+    <h1>Match Simulator</h1>
+    
+    <div class="form-group">
+        <label for="matchType">Match Type:</label>
+        <select id="matchType" onchange="updateSimulatorForm()">
+            <option value="1v1">Singles Match (1v1)</option>
+            <option value="2v2">Tag Team Match (2v2)</option>
+        </select>
+    </div>
+    
+    <div id="simulator-form">
+        <!-- Singles Match Form -->
+        <div id="singles-form">
+            <div class="form-group">
+                <label>Wrestler 1:</label>
+                <select id="wrestler1" class="wrestler-select"></select>
+            </div>
+            
+            <div class="form-group">
+                <label>Wrestler 2:</label>
+                <select id="wrestler2" class="wrestler-select"></select>
+            </div>
+            
+            <div class="form-group">
+                <label>Championship on the line:</label>
+                <select id="singles-championship">
+                    <option value="">No Championship</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Tag Team Form (initially hidden) -->
+        <div id="tag-form" style="display: none;">
+            <h3>Team 1</h3>
+            <div class="form-group">
+                <label>Wrestler 1:</label>
+                <select id="team1-wrestler1" class="wrestler-select"></select>
+            </div>
+            <div class="form-group">
+                <label>Wrestler 2:</label>
+                <select id="team1-wrestler2" class="wrestler-select"></select>
+            </div>
+            
+            <h3>Team 2</h3>
+            <div class="form-group">
+                <label>Wrestler 1:</label>
+                <select id="team2-wrestler1" class="wrestler-select"></select>
+            </div>
+            <div class="form-group">
+                <label>Wrestler 2:</label>
+                <select id="team2-wrestler2" class="wrestler-select"></select>
+            </div>
+            
+            <div class="form-group">
+                <label>Championship on the line:</label>
+                <select id="tag-championship">
+                    <option value="">No Championship</option>
+                </select>
+            </div>
+        </div>
+        
+        <button onclick="simulateMatch()" class="sim-button">Simulate Match</button>
+    </div>
+    
+    <!-- Match Results Dialog -->
+    <dialog id="match-results">
+        <div class="match-results-content">
+            <h2>Match Results</h2>
+            <div id="match-story"></div>
+            <button onclick="this.closest('dialog').close()" class="close-button">Close</button>
+        </div>
+    </dialog>
+</div>
